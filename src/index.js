@@ -1,13 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider }  from 'react-redux';
+import { Provider } from 'react-redux';
 import Layout from './components/Layout';
 
 import store from './store';
+import { startListeningToBoard, startListeningToTurn } from './actions/FirebaseActions';
 
 render(
   <Provider store={store}>
-    <Layout/>    
+    <Layout />
   </Provider>,
   document.getElementById('root')
 );
+
+store.dispatch(startListeningToBoard());
+store.dispatch(startListeningToTurn());

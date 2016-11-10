@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-let sampleReducer = (state = 0) => state;
+import board from './board';
+import turn from './turn';
 
 export default combineReducers({
-  zero: sampleReducer
+  board,
+  turn,
 });
